@@ -1,0 +1,19 @@
+# System files
+**/.directory
+**/**.DS_Store
+**/Thumbs.db
+
+# Visual Studio Code
+.vscode
+
+# NPM
+node_modules
+
+# Composer
+vendor
+
+# Compiled
+dist
+
+# Packages
+packages
