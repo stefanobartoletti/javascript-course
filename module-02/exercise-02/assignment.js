@@ -10,12 +10,13 @@ function alertName(name) {
 }
 
 function concatenateStrings(str1, str2, str3) {
-    alert(`'concatenateStrings' has run: ${str1} | ${str2} | ${str3}`);
+    const result = `'concatenateStrings' has run: ${str1} | ${str2} | ${str3}`;
+    return result;
 }
 
 createAlert();
 alertName('stefano');
 
-task3Element.addEventListener('click', createAlert)
+task3Element.addEventListener('click', createAlert);
 
-concatenateStrings('qui', 'quo', 'qua')
+alert(concatenateStrings('qui', 'quo', 'qua'));
