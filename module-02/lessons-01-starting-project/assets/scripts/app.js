@@ -1,7 +1,12 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-currentResult = (currentResult + 10) * 3 / 2 - 1;
+function add(num1, num2) {
+    const result = num1 + num2;
+    return result;
+}
+
+currentResult = add(1, 2);
 
 /**
 Template literal, equivalent to
@@ -10,5 +15,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
 */
 
 let calculationDescription = `(${ defaultResult } + 10) * 3 / 2 - 1`;
+
+console.log( calculationDescription)
 
 outputResult(currentResult, calculationDescription);
