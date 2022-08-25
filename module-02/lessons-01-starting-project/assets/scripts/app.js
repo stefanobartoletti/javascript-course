@@ -15,6 +15,17 @@ function createDescription(operator, resultBeforeCalc, calcNumber) {
     outputResult(currentResult, calcDescription);
 }
 
+function writeToLog(operationId, prevResult, operationNum, newResult) {
+    const logEntry = {
+        operation: operationId,
+        prevValue: prevResult,
+        number: operationNum,
+        result: newResult
+    }
+    logEntries.push(logEntry)
+    console.log(logEntries)
+}
+
 // --- Math functions ---
 
 function add() {
@@ -22,14 +33,7 @@ function add() {
     initialResult = currentResult;
     currentResult += enteredNumber; // shorthand for currentResult = currentResult + enteredNumber;
     createDescription('+', initialResult, enteredNumber)
-    const logEntry = {
-        operation: 'ADD',
-        number: enteredNumber,
-        prevValue: initialResult,
-        result: currentResult
-    }
-    logEntries.push(logEntry)
-    console.log(logEntries)
+    writeToLog('ADD', initialResult, enteredNumber, currentResult)
 }
 
 function subtract() {
@@ -37,6 +41,7 @@ function subtract() {
     initialResult = currentResult;
     currentResult -= enteredNumber; // shorthand for currentResult = currentResult - enteredNumber;
     createDescription('-', initialResult, enteredNumber)
+    writeToLog('SUBTRACT', initialResult, enteredNumber, currentResult)
 }
 
 function multiply() {
@@ -44,6 +49,7 @@ function multiply() {
     initialResult = currentResult;
     currentResult *= enteredNumber; // shorthand for currentResult = currentResult * enteredNumber;
     createDescription('*', initialResult, enteredNumber)
+    writeToLog('MULTIPLY', initialResult, enteredNumber, currentResult)
 }
 
 function divide() {
@@ -51,6 +57,7 @@ function divide() {
     initialResult = currentResult;
     currentResult /= enteredNumber; // shorthand for currentResult = currentResult / enteredNumber;
     createDescription('/', initialResult, enteredNumber)
+    writeToLog('DIVIDE', initialResult, enteredNumber, currentResult)
 }
 
 // --- Event listeners ---
