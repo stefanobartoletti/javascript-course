@@ -19,28 +19,28 @@ function createDescription(operator, resultBeforeCalc, calcNumber) {
 function add() {
     const enteredNumber = getUserInput();
     initialResult = currentResult;
-    currentResult = currentResult + enteredNumber;
+    currentResult += enteredNumber; // shorthand for currentResult = currentResult + enteredNumber;
     createDescription('+', initialResult, enteredNumber)
 }
 
 function subtract() {
     const enteredNumber = getUserInput();
     initialResult = currentResult;
-    currentResult = currentResult - enteredNumber;
+    currentResult -= enteredNumber; // shorthand for currentResult = currentResult - enteredNumber;
     createDescription('-', initialResult, enteredNumber)
 }
 
 function multiply() {
     const enteredNumber = getUserInput();
     initialResult = currentResult;
-    currentResult = currentResult * enteredNumber;
+    currentResult *= enteredNumber; // shorthand for currentResult = currentResult * enteredNumber;
     createDescription('*', initialResult, enteredNumber)
 }
 
 function divide() {
     const enteredNumber = getUserInput();
     initialResult = currentResult;
-    currentResult = currentResult / enteredNumber;
+    currentResult /= enteredNumber; // shorthand for currentResult = currentResult / enteredNumber;
     createDescription('/', initialResult, enteredNumber)
 }
 
