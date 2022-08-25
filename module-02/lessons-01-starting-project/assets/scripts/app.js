@@ -2,6 +2,7 @@
 
 const defaultResult = 0;
 let currentResult = defaultResult;
+let logEntries = [];
 
 // --- Helper functions ---
 
@@ -21,6 +22,14 @@ function add() {
     initialResult = currentResult;
     currentResult += enteredNumber; // shorthand for currentResult = currentResult + enteredNumber;
     createDescription('+', initialResult, enteredNumber)
+    const logEntry = {
+        operation: 'ADD',
+        number: enteredNumber,
+        prevValue: initialResult,
+        result: currentResult
+    }
+    logEntries.push(logEntry)
+    console.log(logEntries)
 }
 
 function subtract() {
