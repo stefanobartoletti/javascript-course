@@ -36,11 +36,17 @@ function calculateResult(calcType) {
     if (calcType === 'ADD') {
         currentResult += enteredNumber; // shorthand for currentResult = currentResult + enteredNumber;
         mathOperator = '+';
-    } else {
+    } else if (calcType === 'SUBTRACT'){
         currentResult -= enteredNumber; // shorthand for currentResult = currentResult - enteredNumber;
-        mathOperator = '-';
+        mathOperator = '-';    
+    } else if (calcType === 'MULTIPLY'){
+        currentResult *= enteredNumber; // shorthand for currentResult = currentResult - enteredNumber;
+        mathOperator = '*';    
+    } else if (calcType === 'DIVIDE'){
+        currentResult /= enteredNumber; // shorthand for currentResult = currentResult - enteredNumber;
+        mathOperator = '/';
     }
-    
+
     createDescription(mathOperator, initialResult, enteredNumber)
     writeToLog(calcType, initialResult, enteredNumber, currentResult)
 }
@@ -54,19 +60,11 @@ function subtract() {
 }
 
 function multiply() {
-    const enteredNumber = getUserInput();
-    initialResult = currentResult;
-    currentResult *= enteredNumber; // shorthand for currentResult = currentResult * enteredNumber;
-    createDescription('*', initialResult, enteredNumber)
-    writeToLog('MULTIPLY', initialResult, enteredNumber, currentResult)
+    calculateResult('MULTIPLY')
 }
 
 function divide() {
-    const enteredNumber = getUserInput();
-    initialResult = currentResult;
-    currentResult /= enteredNumber; // shorthand for currentResult = currentResult / enteredNumber;
-    createDescription('/', initialResult, enteredNumber)
-    writeToLog('DIVIDE', initialResult, enteredNumber, currentResult)
+    calculateResult('DIVIDE')
 }
 
 // --- Event listeners ---
