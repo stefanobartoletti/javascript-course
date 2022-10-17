@@ -28,20 +28,29 @@ function writeToLog(operationId, prevResult, operationNum, newResult) {
 
 // --- Math functions ---
 
-function add() {
+function calculateResult(calcType) {
     const enteredNumber = getUserInput();
-    initialResult = currentResult;
-    currentResult += enteredNumber; // shorthand for currentResult = currentResult + enteredNumber;
-    createDescription('+', initialResult, enteredNumber)
-    writeToLog('ADD', initialResult, enteredNumber, currentResult)
+    const initialResult = currentResult;
+    let mathOperator;
+
+    if (calcType === 'ADD') {
+        currentResult += enteredNumber; // shorthand for currentResult = currentResult + enteredNumber;
+        mathOperator = '+';
+    } else {
+        currentResult -= enteredNumber; // shorthand for currentResult = currentResult - enteredNumber;
+        mathOperator = '-';
+    }
+    
+    createDescription(mathOperator, initialResult, enteredNumber)
+    writeToLog(calcType, initialResult, enteredNumber, currentResult)
+}
+
+function add() {
+    calculateResult('ADD')
 }
 
 function subtract() {
-    const enteredNumber = getUserInput();
-    initialResult = currentResult;
-    currentResult -= enteredNumber; // shorthand for currentResult = currentResult - enteredNumber;
-    createDescription('-', initialResult, enteredNumber)
-    writeToLog('SUBTRACT', initialResult, enteredNumber, currentResult)
+    calculateResult('SUBTRACT')
 }
 
 function multiply() {
