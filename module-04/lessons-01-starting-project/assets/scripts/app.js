@@ -47,6 +47,15 @@ function calculateResult(calcType) {
         mathOperator = '/';
     }
 
+    if (
+        calcType !== 'ADD' && 
+        calcType !== 'SUBTRACT' && 
+        calcType !== 'MULTIPLY' && 
+        calcType !== 'DIVIDE'
+    ) {
+        return;
+    }
+
     createDescription(mathOperator, initialResult, enteredNumber)
     writeToLog(calcType, initialResult, enteredNumber, currentResult)
 }
