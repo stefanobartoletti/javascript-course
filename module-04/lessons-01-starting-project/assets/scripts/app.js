@@ -51,7 +51,8 @@ function calculateResult(calcType) {
         calcType !== 'ADD' && 
         calcType !== 'SUBTRACT' && 
         calcType !== 'MULTIPLY' && 
-        calcType !== 'DIVIDE'
+        calcType !== 'DIVIDE' ||
+        enteredNumber === 0 // or !enterednumber , falsay value
     ) {
         return;
     }
